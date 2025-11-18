@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bismillah CEO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="halaman-awal" class="halaman-container">
+        <div class="card card-awal">
+            <img src="piggy.jpg" alt="Celengan Manis" class="piggy-awal">
+            <h1>Obake Nabung Yuk!</h1>
+        </div>
+        <div class="intro-box-blue">
+            <p>Tapi hidup cuma sekali😜</p>
+        </div>
+        <button id="btn-mulai" class="btn-mulai">Yuk Mulai</button>
+    </div>
+
+    <div id="halaman-utama" class="halaman-container tersembunyi">
+
+        <header class="header">
+            <div class="header-content">
+                <img src="duit.png" alt="Piggy Icon" class="header-piggy-icon">
+                <h2>Piggy Budgets</h2>
+            </div>
+        </header>
+
+        <section class="saldo-section">
+            <div class="card card-saldo">
+                <img src="pelangi.png" alt="Celengan" class="piggy-saldo">
+                <div class="saldo-info">
+                    <p>Total Saldo</p>
+                    <h1 id="total-saldo"></h1>
+                </div>
+                <img src="hujan.png" alt="Celengan" class="piggy-saldo">
+            </div>
+            
+            <button id="btn-reset" class="btn-reset">
+                <i class="fas fa-trash-alt"></i> Reset Total
+            </button>
+        </section>
+
+        <section class="form-section">
+            <div class="card card-form">
+                <h3>Banyakin Nabung</h3>
+                <form id="form-transaksi">
+                    
+                    <!-- Pemasukan/Pengeluaran Radio -->
+                    <div class="radio-group">
+                        <label class="radio-label active" data-type="pemasukan">
+                            <i class="fas fa-plus-circle"></i> Pemasukan
+                        </label>
+                        <label class="radio-label" data-type="pengeluaran">
+                            <i class="fas fa-minus-circle"></i> Pengeluaran
+                        </label>
+                        <input type="hidden" id="jenis-transaksi" value="pemasukan">
+                    </div>
+
+                    <!-- Input Tanggal -->
+                    <div class="input-group">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="tanggal" required>
+                    </div>
+
+                    <!-- Input Deskripsi (Diberi ID untuk Kontrol JavaScript) -->
+                    <div class="input-group" id="deskripsi-input-group">
+                        <i class="fas fa-pencil-alt"></i>
+                        <input type="text" id="deskripsi" placeholder="Deskripsi (Mis: Beli Kopi)" required>
+                    </div>
+
+                    <!-- Input Jumlah -->
+                    <div class="input-group">
+                        <i class="fas fa-coins"></i>
+                        <input type="number" id="jumlah" placeholder="Jumlah (Rp)" required min="1">
+                    </div>
+
+                    <button type="submit" class="btn-tambah">
+                        <i class="fas fa-plus"></i> Tambah
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Visual Transaksi (Riwayat) -->
+        <section class="riwayat-section">
+            <div class="card card-riwayat">
+                <h3>Riwayat Transaksi</h3>
+                <ul id="daftar-riwayat">
+                    <!-- Riwayat akan diisi oleh JavaScript -->
+                </ul>
+            </div>
+        </section>
+    </div>
+    <!-- AKHIR MODAL POP-UP KUSTOM -->
+    <script src="script.js"></script>
+</body>
+</html>

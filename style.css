@@ -1,0 +1,375 @@
+/* Import Google Font (Contoh: Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    /* Rekomendasi Warna Anda */
+    --color-pink-pastel: #FFD1DC;
+    --color-biru-langit: #ffa8B6;
+    --color-kuning-lemon: #FDFD96;
+    --color-hijau-mint: #9df9ef;
+    --color-ungu-lavender: #DCD0FF;
+
+    /* Warna Utama Aplikasi */
+    --color-primary-text: #6B4F4F; /* Cokelat Tua Lembut */
+    --color-secondary-text: #8A7B76; /* Abu-abu Tua Lembut */
+    --color-background-app: #a28089;
+    
+    /* Warna Transaksi */
+    --color-pemasukan-highlight: var(--color-hijau-mint); /* Mengubah -bg menjadi -highlight agar lebih fleksibel */
+    --color-pengeluaran-highlight: var(--color-kuning-lemon);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--color-background-app);
+    color: var(--color-primary-text);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+#halaman-utama {
+    /* Gradient Biru Langit ke Pink Pastel */
+    background: linear-gradient(180deg, var(--color-biru-langit) 0%, var(--color-pink-pastel) 100%);
+    max-width: 450px; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px 50px 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#halaman-awal {
+    background-color: var(--color-background-app);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.halaman-container {
+    max-width: 450px; 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.tersembunyi {
+    display: none !important;
+}
+
+/* --- Styling Kartu Umum (Card) --- */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 3px dashed var(--color-pink-pastel); 
+}
+
+
+/* ==================================== */
+/* 1. Halaman Awal & Tombol Mulai (Tidak Berubah Signifikan) */
+/* ==================================== */
+.card-awal {
+    background: linear-gradient(135deg, var(--color-pink-pastel), #f9e9ed); 
+    border: 3px dashed var(--color-pink-pastel);
+    padding: 40px 20px;
+}
+.piggy-awal {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.intro-box, .intro-box-blue {
+    background-color: var(--color-biru-langit);
+    color: var(--color-primary-text);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 15px 0 10px 0;
+    font-weight: 600;
+}
+.intro-box-blue {
+    padding: 15px 20px;
+    font-size: 1.1em;
+}
+.btn-mulai {
+    background-color: var(--color-hijau-mint);
+    color: var(--color-primary-text);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+.btn-mulai:hover {
+    background-color: #9cd4c2;
+}
+
+/* ==================================== */
+/* 2. Halaman Utama */
+/* ==================================== */
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-text);
+}
+/* Gaya BARU untuk Gambar Babi di Header */
+.header-piggy-icon {
+    width: 100px; 
+    height: auto;
+    margin-right: 10px;
+}
+.header-content h2 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+
+/* Saldo Section */
+.saldo-section {
+    position: relative; /* Penting untuk posisi tombol reset */
+}
+.card-saldo {
+    background: linear-gradient(135deg, var(--color-pink-pastel), var(--color-biru-langit)); 
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    border: 3px dashed var(--color-ungu-lavender);
+}
+.piggy-saldo { /* Gaya untuk Gambar Babi di Card Saldo */
+    width: 55px;
+    height: auto;
+}
+.saldo-info {
+    flex-grow: 1;
+    text-align: center;
+}
+.saldo-info p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--color-secondary-text);
+}
+.saldo-info h1 {
+    font-size: 2.2em;
+    color: var(--color-primary-text);
+    margin: 5px 0 0 0;
+}
+.cloud-icon {
+    font-size: 2.5em;
+    color: var(--color-ungu-lavender); 
+    margin-left: 15px;
+}
+
+/* Tombol Reset BARU */
+.btn-reset {
+    position: absolute;
+    top: -5px; /* Sedikit di atas card saldo */
+    right: 5px;
+    background-color: var(--color-ungu-lavender);
+    color: var(--color-primary-text);
+    border: 1px solid var(--color-primary-text);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+.btn-reset:hover {
+    background-color: #c9bcf0;
+}
+.btn-reset i {
+    margin-right: 5px;
+}
+
+
+/* Form Section */
+.card-form {
+    border: 3px dashed var(--color-biru-langit);
+    padding: 30px 20px;
+}
+.card-form h3 {
+    text-align: center;
+    color: var(--color-primary-text);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+.radio-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 15px; /* Disesuaikan untuk input tanggal */
+}
+.radio-label {
+    flex: 1;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    color: var(--color-secondary-text);
+}
+.radio-label i {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+/* State Aktif Pemasukan/Pengeluaran */
+.radio-label[data-type="pemasukan"].active {
+    background-color: var(--color-pemasukan-highlight);
+    color: var(--color-primary-text);
+    border-color: var(--color-primary-text);
+}
+.radio-label[data-type="pengeluaran"].active {
+    background-color: var(--color-pengeluaran-highlight);
+    color: var(--color-primary-text);
+    border-color: var(--color-primary-text);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #fff; 
+    border-radius: 10px;
+    padding: 10px;
+    border: 2px solid var(--color-ungu-lavender);
+}
+.input-group i {
+    color: var(--color-primary-text);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.input-group input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 1em;
+    flex-grow: 1;
+    background-color: transparent;
+    color: var(--color-primary-text); /* Pastikan teks input terlihat di tanggal */
+}
+.input-group input::placeholder {
+    color: var(--color-secondary-text);
+}
+
+.btn-tambah {
+    width: 100%;
+    background: linear-gradient(90deg, var(--color-pink-pastel), var(--color-ungu-lavender)); 
+    color: var(--color-primary-text);
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Riwayat Section */
+.card-riwayat {
+    background-color: var(--color-biru-langit);
+    border: 3px dashed var(--color-primary-text);
+}
+.card-riwayat h3 {
+    text-align: center;
+    color: var(--color-primary-text);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+#daftar-riwayat {
+    list-style: none;
+    padding: 0;
+}
+.transaksi {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative; /* Untuk posisi tanggal */
+}
+
+.transaksi .ikon-wrap {
+    font-size: 1.2em;
+    padding: 8px;
+    border-radius: 50%;
+    margin-right: 15px;
+    min-width: 38px;
+    text-align: center;
+}
+
+/* Gaya BARU untuk Tanggal di Riwayat */
+.transaksi .tanggal-wrap { 
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 0.7em;
+    font-weight: 400;
+    color: var(--color-secondary-text);
+}
+
+.transaksi .deskripsi-wrap {
+    flex-grow: 1;
+}
+
+.transaksi .jumlah-wrap {
+    font-weight: 700;
+    text-align: right;
+    min-width: 100px; 
+    padding-top: 10px; /* Jarak dari tanggal */
+}
+
+/* Gaya Pemasukan/Pengeluaran (Tidak Berubah) */
+.transaksi.pemasukan {
+    background-color: #effcf9; 
+    border: 1px solid var(--color-pemasukan-highlight);
+}
+.transaksi.pemasukan .ikon-wrap {
+    color: var(--color-primary-text);
+    background-color: var(--color-pemasukan-highlight);
+}
+.transaksi.pengeluaran {
+    background-color: #fffff0; 
+    border: 1px solid var(--color-pengeluaran-highlight);
+}
+.transaksi.pengeluaran .ikon-wrap {
+    color: var(--color-primary-text);
+    background-color: var(--color-pengeluaran-highlight);
+}
