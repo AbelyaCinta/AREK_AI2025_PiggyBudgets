@@ -244,22 +244,18 @@ const handleFormSubmit = async (e) => {
 
 // 2. Handler untuk tombol Reset TOTAL DATA (FIXED)
 const handleReset = () => {
-    // Menggunakan confirm() yang tidak menggunakan window.confirm
     if (confirm('APAKAH ANDA YAKIN? Ini akan menghapus SEMUA DATA Anda (Saldo Rp 0 dan Riwayat hilang total).')) {
-        
-        // LANGKAH 1: Hapus dari Local Storage (PENTING!)
+
+        // Hapus data
         localStorage.removeItem('saldo');
         localStorage.removeItem('riwayatTransaksi');
-        
-        // LANGKAH 2: Reset variabel JavaScript di memori
-        saldo = SALDO_DEFAULT; 
-        riwayatTransaksi = RIWAYAT_DEFAULT; // Pastikan menjadi array kosong []
-        
-        // LANGKAH 3: Update tampilan UI dengan data yang sudah kosong
-        updateSaldo();
-        tampilkanRiwayat(); // Memastikan daftar riwayat di layar kosong
-        
-        alert('SEMUA data berhasil direset! Aplikasi sekarang bersih dan siap digunakan kembali.');
+
+        // Reset variabel
+        saldo = SALDO_DEFAULT;
+        riwayatTransaksi = RIWAYAT_DEFAULT;
+
+        // Refresh otomatis
+        location.reload();
     }
 };
 
